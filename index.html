@@ -1,0 +1,250 @@
+<?php
+/*
+  @Author: ananayarora
+  @Date:   2017-04-29T14:33:44+05:30
+  @Last modified by:   ananayarora
+  @Last modified time: 2017-04-30T09:34:35+05:30
+*/
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>SpaceApps</title>
+        <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <!-- <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyD5EqPXvnOenIzojfnspYOQdolBY5GW7lY"></script> -->
+        <script src="http://cesiumjs.org/releases/1.32/Build/Cesium/Cesium.js"></script>
+        <link rel="stylesheet" href="http://cesiumjs.org/releases/1.32/Build/Cesium/Widgets/widgets.css">
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+    <body>
+        <div class="globe-screen">
+            <div class="buttons">
+                <div class="btn home_button" id="btn-home">
+                    <img src="img/home.png" class="home_icon" align="absmiddle" alt="">
+                    <span class="text">Home</span>
+                </div>
+                <div class="btn" id="btn-poi">
+                    <img src="img/poi.png" align="absmiddle" alt="">
+                    <span class="text">Points of Interest</span>
+                </div>
+                <div class="btn" id='btn-hotel'>
+                    <img src="img/hotel.png" align="absmiddle" alt="">
+                    <span class="text">Hotels</span>
+                </div>
+                <!-- <div class="btn" id="btn-uber">
+                    <img src="img/uber.png" align="absmiddle" alt="">
+                    <span class="text">Uber</span>
+                </div> -->
+            </div>
+            <!-- <div class="cards">
+                <div class="card card_loc">
+                    <div class="main">New York, United States</div>
+                    <div class="meta">Current Location</div>
+                </div>
+                <div class="card card_est">
+                    <div class="main">1h 9m</div>
+                    <div class="meta">Estimated Time of Arrival</div>
+                </div>
+                <div class="poi">
+                    <div class="card card_dest">
+                        <div class="main">Florida, United States</div>
+                        <div class="meta">Current Location</div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="bottom">
+                <!-- HOME -->
+
+                <div class="home">
+                    <div class="origin">DEL</div>
+                    <div class="line"></div>
+                    <img src="img/plane.png" alt="" class="plane">
+                    <div class="destination">MCO</div>
+                    <div class="current">Currently flying over New Delhi, India</div>
+                </div>
+
+                <!-- POI -->
+                <div class="poi">
+                  <div class="delhi-poi">
+                    <div class="card">
+                        <img src="img/Delhi1.jpg" alt="">
+                        <br />
+                        <center><span class="name">India Gate</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/Delhi2.jpg" alt="">
+                        <br />
+                        <center><span class="name">Jama Masjid</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/Delhi3.jpg" alt="">
+                        <br />
+                        <center><span class="name">Qutub Minar</span></center>
+                    </div>
+                  </div>
+                  <div class="kabul-poi">
+                    <div class="card">
+                        <img src="img/kabul1.jpg" alt="">
+                        <br />
+                        <center><span class="name">National Museus of Afghanistan</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/kabul2.jpg" alt="">
+                        <br />
+                        <center><span class="name">Gardens of Babur</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/kabul3.jpg" alt="">
+                        <br />
+                        <center><span class="name">Id Gah Mosque</span></center>
+                    </div>
+                  </div>
+                  <div class="norrbotten-poi">
+                    <div class="card">
+                        <img src="img/norbotten1.jpg" alt="">
+                        <br />
+                        <center><span class="name">Aurora</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/norbotten2.jpg" alt="">
+                        <br />
+                        <center><span class="name">Kiruna Church</span></center>
+                    </div>
+                  </div>
+                  <div class="reykjavik-poi">
+                    <div class="card">
+                        <img src="img/reykjavik1.jpg" alt="">
+                        <br />
+                        <center><span class="name">Icelandic Centre</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/reykjavik2.jpg" alt="">
+                        <br />
+                        <center><span class="name">The Perlan</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/reykjavik3.jpg" alt="">
+                        <br />
+                        <center><span class="name">Harpa</span></center>
+                    </div>
+                  </div>
+                  <div class="orlando-poi">
+                    <div class="card">
+                        <img src="img/ksc.jpg" alt="">
+                        <br />
+                        <center><span class="name">Kennedy Space Center</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/disney.png" alt="">
+                        <br />
+                        <center><span class="name">Disneyland</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/lake.png" alt="">
+                        <br />
+                        <center><span class="name">Lake Eola park</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/universal.png" alt="">
+                        <br />
+                        <center><span class="name">Universal Island</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/orlando.png" alt="">
+                        <br />
+                        <center><span class="name">Downtown Orlando</span></center>
+                    </div>
+                  </div>
+                </div>
+                <div class="hotels">
+                  <div class="delhi-hotel">
+                    <div class="card">
+                        <img src="img/Delhi4.jpg" alt="">
+                        <br />
+                        <center><span class="name">Radisson Blu</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/Delhi5.jpg" alt="">
+                        <br />
+                        <center><span class="name">Eros Hotel</span></center>
+                    </div>
+                  </div>
+                  <div class="kabul-hotel">
+                    <div class="card">
+                        <img src="img/kabul4.jpg" alt="">
+                        <br />
+                        <center><span class="name">Park Star Hotel</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/kabul5.jpg" alt="">
+                        <br />
+                        <center><span class="name">Serena Hotel</span></center>
+                    </div>
+                  </div>
+                  <div class="norrbotten-hotel">
+                    <div class="card">
+                        <img src="img/norbotten3.jpg" alt="">
+                        <br />
+                        <center><span class="name">Ice Hotel</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/norbotten4.jpg" alt="">
+                        <br />
+                        <center><span class="name">Northern Light Lounge</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/norbotten5.jpg" alt="">
+                        <br />
+                        <center><span class="name">Tree Hotel</span></center>
+                    </div>
+                  </div>
+                  <div class="reykjavik-hotel">
+                    <div class="card">
+                        <img src="img/reykjavik4.jpg" alt="">
+                        <br />
+                        <center><span class="name">Icelandair Hotel</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/reykjavik5.jpg" alt="">
+                        <br />
+                        <center><span class="name">Hotel Bjork</span></center>
+                    </div>
+                  </div>
+                  <div class="orlando-hotel">
+                    <div class="card">
+                        <img src="img/hotel1.png" alt="">
+                        <br />
+                        <center><span class="name">Coco Beach Hotel</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/hotel2.png" alt="">
+                        <br />
+                        <center><span class="name">Hampton Inn</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/hotel3.png" alt="">
+                        <br />
+                        <center><span class="name">Mariott Courtyard</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/hotel4.png" alt="">
+                        <br />
+                        <center><span class="name">Hyatt Regency</span></center>
+                    </div>
+                    <div class="card">
+                        <img src="img/hotel5.png" alt="">
+                        <br />
+                        <center><span class="name">Sheraton Hotel</span></center>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div id="cesiumContainer"></div>
+        </div>
+
+    </body>
+</html>
