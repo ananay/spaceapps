@@ -14,7 +14,7 @@
         <meta charset="utf-8">
         <title></title>
         <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&libraries=visualization&key=AIzaSyD5EqPXvnOenIzojfnspYOQdolBY5GW7lY"></script>
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyD5EqPXvnOenIzojfnspYOQdolBY5GW7lY"></script>
         <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
         <script type="text/javascript" src="js/elevation.js"></script>
         <link rel="stylesheet" href="css/elevation.css">
